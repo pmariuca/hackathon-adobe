@@ -81,10 +81,10 @@ export class AuthService {
     };
   }
 
-  async changePassword(userId: number, { token, password }: ChangePasswordDto) {
-    const user = await prisma.user.findUnique({
+  async changePassword({ token, password }: ChangePasswordDto) {
+    const user = await prisma.user.findFirst({
       where: {
-        id: userId,
+        resetToken: token,
       },
     });
     if (!user) {
@@ -105,6 +105,26 @@ export class AuthService {
     });
     return {
       message: 'Password changed',
+    };
+  }
+
+  async getMyProfile(userId: number) {
+    const user = await prisma.user.findUnique({
+      select: {
+        id: true,
+        email: true,
+        posts: true,
+        points: true,
+      },
+      where: {
+        id: userId,
+      },
+    });
+    if (!user) {
+      throw new HttpException('User not found', 404);
+    }
+    return {
+      user,
     };
   }
 }
