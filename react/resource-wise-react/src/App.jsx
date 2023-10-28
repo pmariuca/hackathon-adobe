@@ -8,12 +8,13 @@ import Navbar from './components/navbar/navbar.jsx';
 import Register from "./pages/register/register.jsx";
 import './index.css';
 
-function App() {
+function App () {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/newdonation" element={<NewDonation />} />
+        <Route path="/donations/:id" element={<ViewDonation />} />
         <Route path="/mainpage" element={<MainPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/userprofile" element={<UserProfile />} />
