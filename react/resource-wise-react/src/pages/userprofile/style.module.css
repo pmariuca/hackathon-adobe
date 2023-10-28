@@ -1,0 +1,19 @@
+.userMain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+    width: 40rem;
+    margin-top: 3rem;
+
+    padding: 5rem;
+}
