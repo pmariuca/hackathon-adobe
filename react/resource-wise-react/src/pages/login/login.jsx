@@ -54,9 +54,9 @@ function Login () {
                         <h2>ResourceWise.com</h2>
                     </div>
                     <h3> Login </h3>
-                    <h4> Email </h4>                            
+                    <h3> Email </h3>                            
                     <input type="text" id="email" className={styles.credentialsLogin} value={email} onChange={handleChange} autoComplete="off"></input>
-                    <h2> Password </h2>
+                    <h3> Password </h3>
                     <input type="password" id="password" className={styles.credentialsLogin} value={password} onChange={handleChange} autoComplete="off"></input>
                     <button id={styles.login_button} onClick={handleLogin} > Log In </button>
                     <p onClick={goToResetPassword}> Forgot your password? </p>

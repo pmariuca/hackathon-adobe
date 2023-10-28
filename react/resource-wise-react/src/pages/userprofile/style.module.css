@@ -1,6 +1,7 @@
 .userMain {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -16,4 +17,21 @@
     margin-top: 3rem;
 
     padding: 5rem;
+}
+
+.rankingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+    width: 40rem;
+    margin-top: 3rem;
+
+    padding: 5rem;
+}
+
+.rankingContainer > ul > li {
+    padding: 10px;
 }
