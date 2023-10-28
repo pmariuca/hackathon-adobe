@@ -2,10 +2,16 @@ import styles from './mainpage.module.css'
 import Donation from '../../components/donation/Donation.jsx'
 import Navbar from '../../components/navbar/navbar'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function MainPage () {
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
     const [donations, setDonations] = useState([]);
+    if (localStorage.getItem('accessToken') === null) {
+        navigate('/login');
+    }
+
     useEffect(() => {
         fetch('http://localhost:3000/posts', {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`,
