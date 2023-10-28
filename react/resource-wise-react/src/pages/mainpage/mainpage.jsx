@@ -13,9 +13,14 @@ function MainPage () {
     }
 
     useEffect(() => {
-        fetch('http://localhost:3000/posts', { headers: { authorization: `Bearer ${localStorage.getItem('accessToken')}` } })
+        fetch('http://localhost:3000/posts', {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(response => response.json())
             .then(data => { setDonations(data); setIsLoading(false); })
+            // .then(() => setDonations([{ id: 1, title: 'test', author: 'test', content: 'test' }]))
             .catch(err => { console.log(err); setIsLoading(false) });
     }, []);
     return (

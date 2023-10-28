@@ -28,6 +28,7 @@ function Register() {
 
                     localStorage.setItem("email", email)
                     localStorage.setItem("password", password)
+                    // localStorage.setItem("id", )
                     navigate("/login")
 
                 } else {
