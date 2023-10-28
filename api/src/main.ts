@@ -7,6 +7,7 @@ import { setupMail } from './mail';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
+  app.enableCors();
   setupSwagger(app);
   setupMail();
   await app.listen(3000);

@@ -12,7 +12,6 @@ function Login(){
         navigate("/register")
     }
 
-
     return (
         <>
         <div className={styles.loginMainContainer}>
