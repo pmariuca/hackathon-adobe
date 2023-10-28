@@ -11,6 +11,10 @@ function Login () {
         navigate("/register")
     }
 
+    function goToResetPassword () {
+        navigate("/reset-password")
+    }
+
     const handleChange = (event) => {
         if (event.target.id === "email") {
             setEmail(event.target.value)
@@ -49,7 +53,7 @@ function Login () {
                     <h2> Password </h2>
                     <input type="password" id="password" className={styles.credentialsLogin} value={password} onChange={handleChange}></input>
                     <button id={styles.login_button} onClick={handleLogin} > Log In </button>
-                    <p> Forgot your password? </p>
+                    <p onClick={goToResetPassword}> Forgot your password? </p>
                     {/* <div className={styles.register_container}> */}
                     <p onClick={goToRegister}> Register </p>
                     {/* </div> */}

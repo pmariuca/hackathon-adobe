@@ -4,9 +4,10 @@ import NewDonation from './pages/newdonation/newdonation.jsx';
 import UserProfile from './pages/userprofile/userprofile.jsx';
 import ViewDonation from './pages/viewdonation/viewdonation.jsx';
 import Login from './pages/login/login.jsx';
-import Navbar from './components/navbar/navbar.jsx';
 import Register from "./pages/register/register.jsx";
 import './index.css';
+import ResetPassword from "./pages/ResetPassword.jsx/ResetPassword.jsx";
+import ChangePassword from "./pages/ChangePassword/ChangePassword.jsx";
 
 function App () {
   return (
@@ -19,6 +20,8 @@ function App () {
         <Route path="/login" element={<Login />} />
         <Route path="/userprofile" element={<UserProfile />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/change-password/:id" element={<ChangePassword />} />
         {/* Define other routes and components here */}
       </Routes>
     </Router>
