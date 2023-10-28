@@ -5,6 +5,7 @@ import UserProfile from './pages/userprofile/userprofile.jsx';
 import ViewDonation from './pages/viewdonation/viewdonation.jsx';
 import Login from './pages/login/login.jsx';
 import Navbar from './components/navbar/navbar.jsx';
+import Register from "./pages/register/register.jsx";
 import './index.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/mainpage" element={<MainPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/userprofile" element={<UserProfile />} />
+        <Route path="/register" element={<Register />} />
         {/* Define other routes and components here */}
       </Routes>
     </Router>
