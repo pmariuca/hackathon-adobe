@@ -3,10 +3,10 @@ import styles from './register.module.css'
 import { useNavigate } from 'react-router-dom'
 
 
-function Register() {
-    const navigate = useNavigate();    
+function Register () {
+    const navigate = useNavigate();
 
-    function reg(){
+    function reg () {
 
         const email = document.getElementById("email").value
         const password = document.getElementById("password").value
@@ -20,8 +20,8 @@ function Register() {
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
                     'Content-Type': 'application/json'
-                  },
-                body: JSON.stringify({email: email, password: password})
+                },
+                body: JSON.stringify({ email: email, password: password })
             }).then(response => {
                 if (response.ok) {
                     // the user was created
@@ -35,12 +35,12 @@ function Register() {
                     alert(response.status)
                 }
             })
-            .then(data => {
-                console.log(data); // Handle the response data here
-            })
-            .catch(error => {
-                console.log(error); // Handle errors here
-            });
+                .then(data => {
+                    console.log(data); // Handle the response data here
+                })
+                .catch(error => {
+                    console.log(error); // Handle errors here
+                });
         }
     }
 
@@ -48,16 +48,16 @@ function Register() {
         <>
             <div className={styles.regMainContainer}>
                 <div className={styles.reg_container}>
-                    <h1> ChatterSphere Login </h1>
+                    <h1> Login </h1>
                     <h2> Email </h2>
-                    <input type="text" id="email"></input>
-                    <h2> Password </h2> 
-                    <input type="text" id="password"></input>
-                    <h2> Confirm Password </h2> 
-                    <input type="text" id="confirmPassword"></input>
+                    <input type="text" id="email" autoComplete="off"></input>
+                    <h2> Password </h2>
+                    <input type="password" id="password" autoComplete="off"></input>
+                    <h2> Confirm Password </h2>
+                    <input type="text" id="confirmPassword" autoComplete="off"></input>
 
                     <button id={styles.reg_button} onClick={reg}> Register </button>
-                </div>  
+                </div>
             </div>
         </>
     )

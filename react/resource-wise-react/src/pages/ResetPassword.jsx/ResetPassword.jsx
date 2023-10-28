@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './resetPassword.module.css'
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("")
@@ -27,12 +28,17 @@ const ResetPassword = () => {
   }
 
   return (
-    <div>
-      <h1>Reset Password</h1>
-      <p>Enter your email address and we will send you a link to reset your password.</p>
-      <input id="email" type="email" placeholder="Email" value={email} onChange={handleChange} required />
-      <button onClick={handleSubmit}>Reset Password</button>
-    </div>
+    <>
+      <div className={styles.loginMainContainer}>
+        <div className={styles.login_container}>
+          <h1> Reset Password </h1>
+          <p>Enter your email address and we will send you a link to reset your password.</p>
+          <input className={styles.credentialsLogin} id="email" type="email" placeholder="Email" value={email} onChange={handleChange} required autoComplete="off" />
+          <button id={styles.login_button} onClick={handleSubmit}>Reset Password</button>
+        </div>
+
+      </div>
+    </>
   )
 }
 

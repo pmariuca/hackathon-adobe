@@ -3,7 +3,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 const setupSwagger = (app: INestApplication<any>) => {
   const options = new DocumentBuilder()
-    .setTitle('Adobe Hackaton')
+    .setTitle('Resource Wise API')
     .setDescription('The API description')
     .setVersion('1.0')
     .addBearerAuth()
