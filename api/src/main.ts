@@ -5,9 +5,10 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 
 export function setupSwagger(app: INestApplication<any>) {
   const options = new DocumentBuilder()
-    .setTitle('NestJS Project')
+    .setTitle('Adobe Hackaton')
     .setDescription('The API description')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
