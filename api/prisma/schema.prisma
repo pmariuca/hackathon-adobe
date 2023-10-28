@@ -16,6 +16,7 @@ model User {
   password   String
   resetToken String?
   posts      Post[]
+  points     Int     @default(0)
 }
 
 model Post {

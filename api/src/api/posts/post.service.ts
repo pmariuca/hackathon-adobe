@@ -46,6 +46,15 @@ export class PostService {
         authorId: userId,
       },
     });
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+    });
+    await prisma.user.update({
+      where: { id: post.id },
+      data: {
+        points: user.points + 1,
+      },
+    });
     return post;
   }
 
