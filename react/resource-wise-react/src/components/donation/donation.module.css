@@ -1,0 +1,18 @@
+.donationContainer {
+    display: flexbox;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 500px;
+
+    background-color: rgba(103, 137, 131, .3);
+
+    padding: 25px;
+}
+
+.donationContainer > h1 {
+    color: aliceblue;
+}
+
+.donationContainer > p {
+    color: aliceblue;
+}
