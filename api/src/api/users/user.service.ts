@@ -15,4 +15,13 @@ export class UsersService {
       email: user.email,
     };
   }
+
+  async findAllUsers() {
+    const users = await prisma.user.findMany();
+    return users.map((user) => ({
+      id: user.id,
+      email: user.email,
+      points: user.points,
+    }));
+  }
 }

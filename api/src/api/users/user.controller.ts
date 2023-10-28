@@ -14,4 +14,11 @@ export class UsersController {
   async getUser(@Param('id') id: string) {
     return await this.userService.findOneById(Number(id));
   }
+
+  @Get('/users')
+  @UseGuards(AuthGuard)
+  @ApiBearerAuth()
+  async getUsers() {
+    return await this.userService.findAllUsers();
+  }
 }
