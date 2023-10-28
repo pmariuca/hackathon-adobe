@@ -23,12 +23,12 @@ function Navbar () {
         <>
             <div className={styles.navbar}>
                 {/* <input type="text" className={styles.search_donation} id="searchInput" placeholder='search donation'></input> */}
-                <div className={styles.navcontainer}>
+                <div className={styles.navcontainer} onClick={() => {navigate("/mainpage")}} style={{ cursor: "pointer" }}>
                     <img src={logo1}></img>
                     <h2> ResourceWise </h2>
                 </div>
                 <div className={styles.navcontainer}>
-                    <li onClick={goToDonate}>  Donation </li>
+                    { window.location.pathname.split("/")[1]!=="userprofile" ? <li onClick={goToDonate}>  Donation </li> : ""}
                     <li onClick={logout}> Logout </li>
                     <img id={styles.user} src={logo2} onClick={goToProfile}></img>
                 </div>
