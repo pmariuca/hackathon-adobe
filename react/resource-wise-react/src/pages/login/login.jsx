@@ -2,6 +2,8 @@ import styles from './login.module.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import logo from '..//..//assets//earth_share_logo.svg'
+
 function Login () {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -47,8 +49,12 @@ function Login () {
         <>
             <div className={styles.loginMainContainer}>
                 <div className={styles.login_container}>
-                    <h1> Login </h1>
-                    <h2> Email </h2>
+                <div className={styles.headerLogin}>
+                        <img src={logo}></img>
+                        <h2>ResourceWise.com</h2>
+                    </div>
+                    <h3> Login </h3>
+                    <h4> Email </h4>                            
                     <input type="text" id="email" className={styles.credentialsLogin} value={email} onChange={handleChange} autoComplete="off"></input>
                     <h2> Password </h2>
                     <input type="password" id="password" className={styles.credentialsLogin} value={password} onChange={handleChange} autoComplete="off"></input>

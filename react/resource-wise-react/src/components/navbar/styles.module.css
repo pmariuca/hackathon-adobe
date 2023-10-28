@@ -30,6 +30,10 @@
   padding-left: 100px;
 }
 
+.navcontainer > img {
+  width: 3rem;
+}
+
 .navcontainer {
   display: flex;
   justify-content: space-between;
