@@ -1,12 +1,16 @@
 .donationContainer {
     display: flexbox;
     flex-direction: column;
-    border: 1px solid black;
-    width: 500px;
+    width: 76rem;
 
-    background-color: rgba(103, 137, 131, .3);
+    background-color: rgba(103, 137, 131, .4);
 
     padding: 25px;
+    margin-bottom: 1rem;
+
+    padding-left: 4rem;
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .donationContainer > h1 {
@@ -15,4 +19,10 @@
 
 .donationContainer > p {
     color: aliceblue;
+}
+
+.donationContainer:hover {
+    background-color: rgba(145, 204, 193, 0.3);
+    cursor: pointer;
+    transition: 200ms;
 }
