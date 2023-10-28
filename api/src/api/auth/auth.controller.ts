@@ -1,10 +1,11 @@
-import { Body, Controller, Post, Req } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import UserAuthDto from './dto/auth.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import ForgotPasswordDto from './dto/forgot-password.dto';
 import { RequestWithUser } from 'src/interfaces/auth.interface';
-import changePasswordDto from './dto/change-password.dto';
+import { AuthGuard } from './auth.guard';
+import ChangePasswordDto from './dto/change-password.dto';
 
 @ApiTags('Auth')
 @Controller('auth')
@@ -26,14 +27,15 @@ export class AuthController {
     return await this.authService.initiateResetPassword(resetPasswordData);
   }
 
-  @Post('forgot-password')
-  async forgotPassword(
-    @Req() req: RequestWithUser,
-    @Body() changePasswordData: changePasswordDto,
-  ) {
-    return await this.authService.changePassword(
-      Number(req.user.id),
-      changePasswordData,
-    );
+  @Post('change-password')
+  async chanePassword(@Body() changePasswordData: ChangePasswordDto) {
+    return await this.authService.changePassword(changePasswordData);
+  }
+
+  @UseGuards(AuthGuard)
+  @ApiBearerAuth()
+  @Get('my-profile')
+  async getMyProfile(@Req() req: RequestWithUser) {
+    return await this.authService.getMyProfile(Number(req.user.id));
   }
 }
