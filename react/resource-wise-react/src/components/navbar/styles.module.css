@@ -1,64 +1,63 @@
-#search_donation {
-    display: block;
-    width: 300px;
-    height: 24px;
-    border: 0;
-    font-size: 14px;
-    padding: 3px;
+.search_donation {
+  display: block;
+  width: 300px;
+  height: 24px;
+  border: 0;
+  font-size: 14px;
+  padding: 3px;
 
-    font-weight: 500;
-    letter-spacing: 1px;
+  font-weight: 500;
+  letter-spacing: 1px;
 
-    transition: 200ms;
-    background-color: #c7cbcf;
-    color: #e5e5e7;
+  transition: 200ms;
+  background-color: #c7cbcf;
+  color: #e5e5e7;
 
-    border-radius: 50px;
-    width: 500px;
-    padding-left: 50px;
+  border-radius: 50px;
+  width: 500px;
+  padding-left: 50px;
 }
 
-.navbar { 
-    height: 8vh;
-    width: 100%;
-    /* background-color: rgba(142, 143, 250, .2); */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    padding-left: 2rem;
+.navbar {
+  height: 8vh;
+  width: 100%;
+  /* background-color: rgba(142, 143, 250, .2); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding-left: 100px;
 }
 
-.navcontainer { 
-    display: flex;
-    justify-content: space-between;
+.navcontainer {
+  display: flex;
+  justify-content: space-between;
 
-    align-items: center;
-    
-    height: 100%;
+  align-items: center;
 
-    width: 200px;
-    padding-left: 2rem;
+  height: 100%;
+  padding-left: 50px;
+  padding-right: 200px;
+
+  width: 200px;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-li:hover{
-    background-color: aliceblue;
-    color: black;
-    cursor: pointer;
-    transition: 200ms;
+li:hover {
+  background-color: aliceblue;
+  color: black;
+  cursor: pointer;
+  transition: 200ms;
 }
 
 #user {
-    width: 50px;
-    margin: 0px;
-    padding-right: 4rem;
+  width: 50px;
 }
 
-#user:hover{
-    cursor: pointer;
+#user:hover {
+  cursor: pointer;
 }
