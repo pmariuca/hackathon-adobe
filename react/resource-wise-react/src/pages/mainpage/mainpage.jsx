@@ -28,7 +28,7 @@ function MainPage () {
             <Navbar />
             <div className={styles.maincontainer}>
                 {isLoading && <p> Loading... </p>}
-                <h1> main page </h1>
+                <h1> DONATIONS </h1>
                 {donations && donations.length > 0 ? (
                     donations.map((donation) => (
                         <Donation key={donation.id} donation={donation} />

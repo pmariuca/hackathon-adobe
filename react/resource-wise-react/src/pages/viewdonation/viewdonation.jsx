@@ -21,7 +21,6 @@ function ViewDonation () {
     }, [])
     return (
         <>
-            <h1> view donation page </h1>
             {isLoading && <h1> Loading... </h1>}
             {!isLoading && Object.keys(donation).length !== 0 ? (
                 <div>

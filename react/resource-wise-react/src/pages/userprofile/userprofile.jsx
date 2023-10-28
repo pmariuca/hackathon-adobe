@@ -1,27 +1,28 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './style.module.css'
 
-function UserProfile(props){
-
-    useEffect(()=>{
-        fetch(`http://localhost:3000/users/${1}`, {
+function UserProfile () {
+    const [user, setUser] = useState({})
+    useEffect(() => {
+        fetch(`http://localhost:3000/auth/my-profile`, {
             method: "GET",
             headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json',
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
-    
+
         }).then((response) => response.json())
-        .then((data) => console.log(data))
+            .then((data) => setUser(data.user))
     }, [])
 
     return (
         <>
             <div className={styles.userMain}>
                 <div className={styles.userContainer}>
-                    <h1> User: {props.userEmail} </h1>
-                </div>        
+                    <h1>Welcome {user.email} </h1>
+                    <p>Your earned points: {user.points}</p>
+                </div>
             </div>
         </>
     )

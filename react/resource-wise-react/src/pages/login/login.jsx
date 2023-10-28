@@ -47,11 +47,11 @@ function Login () {
         <>
             <div className={styles.loginMainContainer}>
                 <div className={styles.login_container}>
-                    <h1> ChatterSphere Login </h1>
+                    <h1> Login </h1>
                     <h2> Email </h2>
-                    <input type="text" id="email" className={styles.credentialsLogin} value={email} onChange={handleChange}></input>
+                    <input type="text" id="email" className={styles.credentialsLogin} value={email} onChange={handleChange} autoComplete="off"></input>
                     <h2> Password </h2>
-                    <input type="password" id="password" className={styles.credentialsLogin} value={password} onChange={handleChange}></input>
+                    <input type="password" id="password" className={styles.credentialsLogin} value={password} onChange={handleChange} autoComplete="off"></input>
                     <button id={styles.login_button} onClick={handleLogin} > Log In </button>
                     <p onClick={goToResetPassword}> Forgot your password? </p>
                     {/* <div className={styles.register_container}> */}

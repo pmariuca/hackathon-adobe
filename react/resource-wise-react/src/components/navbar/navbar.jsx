@@ -21,9 +21,9 @@ function Navbar () {
     return (
         <>
             <div className={styles.navbar}>
-                <input type="text" className={styles.search_donation} id="searchInput" placeholder='search donation'></input>
+                <input type="text" className={styles.search_donation} id="searchInput" placeholder='Search' autoComplete='off'></input>
                 <div className={styles.navcontainer}>
-                    <li onClick={goToDonate}> Donation </li>
+                    <li onClick={goToDonate}>  Donation </li>
                     <li onClick={logout}> Logout </li>
                     <img id={styles.user} src={logo} onClick={goToProfile}></img>
                 </div>
