@@ -1,5 +1,6 @@
 import styles from './styles.module.css'
-import logo from '..//..//assets/user_logo.png'
+import logo1 from '..//..//assets/earth_share_logo.svg'
+import logo2 from '..//..//assets/user_logo.png'
 import { useNavigate } from 'react-router-dom';
 
 function Navbar () {
@@ -21,11 +22,15 @@ function Navbar () {
     return (
         <>
             <div className={styles.navbar}>
-                <input type="text" className={styles.search_donation} id="searchInput" placeholder='Search' autoComplete='off'></input>
+                {/* <input type="text" className={styles.search_donation} id="searchInput" placeholder='search donation'></input> */}
+                <div className={styles.navcontainer}>
+                    <img src={logo1}></img>
+                    <h2> ResourceWise </h2>
+                </div>
                 <div className={styles.navcontainer}>
                     <li onClick={goToDonate}>  Donation </li>
                     <li onClick={logout}> Logout </li>
-                    <img id={styles.user} src={logo} onClick={goToProfile}></img>
+                    <img id={styles.user} src={logo2} onClick={goToProfile}></img>
                 </div>
             </div>
         </>

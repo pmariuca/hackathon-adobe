@@ -1,0 +1,22 @@
+.viewDonationMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewDonationContainer {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    margin-top: 80px;
+  
+    display: flex;
+    flex-direction: column;
+}
+
+
+.authorHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15rem;
+}

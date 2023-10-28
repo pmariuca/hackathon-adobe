@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@500&display=swap");
 
 body {
-  background-color: #f0e9d2;
 
   font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
 }
@@ -61,10 +60,20 @@ body {
   color: #000000;
 
   border-radius: 50px;
-  width: 200px;
+  width: 350px;
   padding-left: 50px;
+  padding-right: 20px;
 }
 
 .login_container > p:hover {
   cursor: pointer;
+}
+
+.headerLogin {
+  display: flex;
+  justify-content: center;
+}
+
+.headerLogin > img {
+  width: 4rem;
 }
