@@ -7,14 +7,34 @@ import UpdatePostDto from './dto/update-post.dto';
 export class PostService {
   async getPosts() {
     const posts = await prisma.post.findMany();
-    return posts;
+    return await Promise.all(
+      posts.map(async (post) => ({
+        ...post,
+        author: (
+          await prisma.user.findUnique({
+            where: { id: post.authorId },
+            select: { email: true },
+          })
+        ).email,
+      })),
+    );
   }
 
   async getPostById(id: number) {
     const post = await prisma.post.findUnique({
       where: { id },
     });
-    return { post };
+    return {
+      post: {
+        ...post,
+        author: (
+          await prisma.user.findUnique({
+            where: { id: post.authorId },
+            select: { email: true },
+          })
+        ).email,
+      },
+    };
   }
 
   async createPost(userId: number, data: CreatePostDto) {

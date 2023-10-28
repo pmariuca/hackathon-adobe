@@ -31,7 +31,7 @@ export class PostController {
   @UseGuards(AuthGuard)
   @ApiBearerAuth()
   @Get('posts/:id')
-  async getPost(id: string) {
+  async getPost(@Param('id') id: string) {
     return await this.postService.getPostById(Number(id));
   }
 
@@ -60,7 +60,7 @@ export class PostController {
   @UseGuards(AuthGuard)
   @ApiBearerAuth()
   @Delete('posts/:id')
-  async deletePost(@Req() req: RequestWithUser, id: string) {
+  async deletePost(@Req() req: RequestWithUser, @Param('id') id: string) {
     return await this.postService.deletePost(Number(req.user.id), Number(id));
   }
 }
