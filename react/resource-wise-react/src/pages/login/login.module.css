@@ -8,25 +8,47 @@ body {
     margin: 0;
 }
 
-/* 
 .login_container {
-    position: relative;
-    top: 6em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    margin-top: 80px;
 
-    background-color: #21252b;
-    color: #e5e5e7;
-
-    padding: 20px 40px;
-
-    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
 }
 
-.login_container h2 {
-    font-weight: 100;
-    font-size: 22px;
+.loginMainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-   input {
+.register_container {
+
+}
+
+#login_button {
+    border-radius: 4px;
+    border: 1px;
+    background-color: rgba(233, 233, 248, .7);
+
+    float: right;
+
+    width: 20vh;
+    height: 5vh;
+    display: block;
+    margin-top: 1vh;
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#login_button:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+#credentialsLogin { 
     display: block;
     width: 300px;
     height: 24px;
@@ -38,83 +60,14 @@ body {
     letter-spacing: 1px;
 
     transition: 200ms;
-    background-color: #424549;
-    color: #e5e5e7;
-} */
+    background-color: #ffffff;
+    color: #000000;
 
-/*       
-.input_click {
-    transition: 200ms;
-    background-color: #e5e5e7;
-    color: #1e2124;
+    border-radius: 50px;
+    width: 200px;
+    padding-left: 50px;
 }
 
-p {
-    font-size: 14px;
-    margin-right: 4px;
-}
-
-a {
-    color: #e5e5e7;
-    text-decoration: none;
-    font-size: 14px;
-    margin-right: 4px;
-    margin-top: 14px;
-}
-
-.register_container {
-    display: flex;
-}
-
-a:hover{
-    transition: 150ms;
-    color: #5865f2;
-    text-decoration: underline;
+.login_container > p:hover {
     cursor: pointer;
 }
-
-#login_button {
-
-    display: block;
-
-    margin-top: 26.26px;
-
-    font-weight: 500;
-    color: #1e2124;
-    font-size: 17px;
-
-    border: 5;
-    border-style: solid;
-    border-color: #e5e5e7;
-    border-radius: 4px;
-
-
-    width: 306px;
-    height: 37.87px;
-    background-color: #e5e5e7;
-}
-
-#login_button:hover{
-    transition: 150ms;
-    cursor: pointer;
-    border-color: #5865f2;
-    border-radius: 4px;
-}
-
-.sign-in-providers {
-    border-color: #e5e5e7;
-    border-top: 1px solid;
-    margin-top: 2em;
-    padding-top: 1em;
-    display: block;
-}
-
-.sign-in-providers img {
-    width: 20px;
-    height: 20px;
-    margin-left: 0.5em;
-}
-
-.sign-in-providers img:hover {
-    cursor: pointer;
-} */

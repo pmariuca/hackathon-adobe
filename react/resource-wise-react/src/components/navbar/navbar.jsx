@@ -1,24 +1,19 @@
 import styles from './styles.module.css'
 import logo from '..//..//assets/user_logo.png'
 
-import { Navigate } from "react-router-dom";
-import { useState } from 'react';
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
-    const [goToDonate, setGoToDonate] = React.useState(false)
-    const [goToProfile, setGoToProfile] = React.useState(false)
-    
+    const navigate = useNavigate();    
 
-    if (goToDonate){
-        return <Navigate to="/newdonation"/>
+    function goToDonate() {
+        navigate("/newdonation")
     }
 
-    if (goToProfile){
-        return <Navigate to="/userprofile"/>
+    function goToProfile(){
+        navigate("/userprofile")
     }
-
 
     return (
         <>
@@ -26,9 +21,9 @@ function Navbar() {
                 <input type="text" id={styles.search_donation} placeholder='search donation'></input>
                 <div className={styles.navcontainer}> 
 
-                    <li onClick={()=>{setGoToDonate(true)}}> Donation </li>
+                    <li onClick={goToDonate}> Donation </li>
                     
-                    <img id={styles.user} src={logo} onClick={()=>{setGoToProfile(true)}}></img>
+                    <img id={styles.user} src={logo} onClick={goToProfile}></img>
                 </div>
             </div>
         </>
