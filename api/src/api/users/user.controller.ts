@@ -1,20 +1,17 @@
-import { Body, Controller, Post } from '@nestjs/common';
-import { UserService } from './user.service';
-import { UserAuthData } from './user.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { Controller, Get, Param, UseGuards } from '@nestjs/common';
+import { UsersService } from './user.service';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from '../auth/auth.guard';
 
 @ApiTags('Users')
 @Controller()
-export class UserController {
-  constructor(private readonly userService: UserService) {}
+export class UsersController {
+  constructor(private readonly userService: UsersService) {}
 
-  @Post('login')
-  async login(@Body() loginData: UserAuthData) {
-    return await this.userService.login(loginData);
-  }
-
-  @Post('register')
-  async register(@Body() registerData: UserAuthData) {
-    return await this.userService.register(registerData);
+  @Get('/users/:id')
+  @UseGuards(AuthGuard)
+  @ApiBearerAuth()
+  async getUser(@Param('id') id: string) {
+    return await this.userService.findOneById(Number(id));
   }
 }
