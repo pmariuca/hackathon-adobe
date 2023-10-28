@@ -74,7 +74,7 @@ export class AuthService {
       to: user.email,
       subject: 'Reset password for your account',
       text: 'Reset password',
-      html: `Hello! \n Click <b><a href="http://localhost:5173/reset-password/${id}">this</a></b> to reset your password!`,
+      html: `Hello! \n Click <b><a href="http://localhost:5173/change-password/${id}">this</a></b> to reset your password!`,
     });
     return {
       message: 'Email sent',
