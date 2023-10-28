@@ -1,0 +1,63 @@
+.reg_container {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    margin-top: 80px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.regMainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    padding-bottom: 250rem;
+}
+
+#reg_button {
+    border-radius: 4px;
+    border: 1px;
+    background-color: rgba(233, 233, 248, .7);
+
+    float: right;
+
+    width: 20vh;
+    height: 5vh;
+    display: block;
+    margin-top: 5vh;
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#reg_button:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.reg_container > input { 
+    display: block;
+    width: 300px;
+    height: 24px;
+    border: 0;
+    font-size: 14px;
+    padding: 3px;
+
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    transition: 200ms;
+    background-color: #ffffff;
+    color: #000000;
+
+    border-radius: 50px;
+    width: 200px;
+    padding-left: 50px;
+}
+
+
+
+.reg_container > p:hover {
+    cursor: pointer;
+}
