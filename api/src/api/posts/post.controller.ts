@@ -14,7 +14,7 @@ import { PostService } from './post.service';
 import { AuthGuard } from '../auth/auth.guard';
 import CreatePostDto from './dto/create-post.dto';
 import UpdatePostDto from './dto/update-post.dto';
-import { RequestWithUser } from '../interfaces/auth.interface';
+import { RequestWithUser } from '../../interfaces/auth.interface';
 
 @ApiTags('Posts')
 @Controller()

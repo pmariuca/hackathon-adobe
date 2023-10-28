@@ -1,25 +1,14 @@
 import { NestFactory } from '@nestjs/core';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { AppModule } from './app.module';
-import { INestApplication, ValidationPipe } from '@nestjs/common';
-
-export function setupSwagger(app: INestApplication<any>) {
-  const options = new DocumentBuilder()
-    .setTitle('Adobe Hackaton')
-    .setDescription('The API description')
-    .setVersion('1.0')
-    .addBearerAuth()
-    .build();
-
-  const document = SwaggerModule.createDocument(app, options);
-
-  SwaggerModule.setup('api', app, document);
-}
+import { AppModule } from './api/app.module';
+import { ValidationPipe } from '@nestjs/common';
+import setupSwagger from './swagger';
+import { setupMail } from './mail';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   setupSwagger(app);
+  setupMail();
   await app.listen(3000);
 }
 bootstrap();

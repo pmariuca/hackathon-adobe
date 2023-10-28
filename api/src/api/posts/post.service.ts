@@ -34,10 +34,10 @@ export class PostService {
       where: { id: postId },
     });
     if (!post) {
-      return new HttpException('Post not found', 404);
+      throw new HttpException('Post not found', 404);
     }
     if (post.authorId !== userId) {
-      return new HttpException('Unauthorized', 401);
+      throw new HttpException('Unauthorized', 401);
     }
     try {
       const post = await prisma.post.update({
@@ -50,7 +50,7 @@ export class PostService {
       });
       return { post };
     } catch (e) {
-      return new HttpException(e.message, 500);
+      throw new HttpException(e.message, 500);
     }
   }
 
@@ -59,10 +59,10 @@ export class PostService {
       where: { id: postId },
     });
     if (!post) {
-      return new HttpException('Post not found', 404);
+      throw new HttpException('Post not found', 404);
     }
     if (post.authorId !== userId) {
-      return new HttpException('Unauthorized', 401);
+      throw new HttpException('Unauthorized', 401);
     }
     await prisma.post.delete({
       where: { id: postId },

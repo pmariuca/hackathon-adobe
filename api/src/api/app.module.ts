@@ -1,14 +1,14 @@
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './api/users/user.module';
-import { LoggerMiddleware } from './middlewares/logger.middleware';
-import { PostModule } from './api/posts/post.module';
-import { AuthModule } from './api/auth/auth.module';
-import { AuthController } from './api/auth/auth.controller';
-import { AuthService } from './api/auth/auth.service';
-import { PostController } from './api/posts/post.controller';
-import { PostService } from './api/posts/post.service';
+import { UsersModule } from './users/user.module';
+import { LoggerMiddleware } from '../middlewares/logger.middleware';
+import { PostModule } from './posts/post.module';
+import { AuthModule } from './auth/auth.module';
+import { AuthController } from './auth/auth.controller';
+import { AuthService } from './auth/auth.service';
+import { PostController } from './posts/post.controller';
+import { PostService } from './posts/post.service';
 
 @Module({
   imports: [UsersModule, AuthModule, PostModule],

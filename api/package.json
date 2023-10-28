@@ -26,14 +26,17 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^7.1.14",
     "@prisma/client": "^5.5.2",
+    "@types/nodemailer": "^6.4.13",
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "jwt-decode": "^4.0.0",
+    "nodemailer": "^6.9.7",
     "prisma": "^5.5.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "swagger": "^0.7.5"
+    "swagger": "^0.7.5",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
