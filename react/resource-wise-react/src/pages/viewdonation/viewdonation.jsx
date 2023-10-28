@@ -12,7 +12,7 @@ function ViewDonation () {
             .then(response => response.json())
             .then(data => {
                 if (data.statusCode !== 404) {
-                    setDonation(data); setIsLoading(false)
+                    setDonation(data.post); setIsLoading(false)
                 } else {
                     setDonation({}); setIsLoading(false)
                 }

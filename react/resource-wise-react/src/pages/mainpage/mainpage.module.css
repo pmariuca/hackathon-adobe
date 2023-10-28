@@ -1,9 +1,9 @@
 body {
     background-color: #ffffff;
+    width: 100%;
 }
 
 .maincontainer { 
-
     display: flex;
     flex-direction: column;
 
