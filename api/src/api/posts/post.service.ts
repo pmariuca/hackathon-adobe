@@ -50,7 +50,7 @@ export class PostService {
       where: { id: userId },
     });
     await prisma.user.update({
-      where: { id: post.id },
+      where: { id: user.id },
       data: {
         points: user.points + 1,
       },
